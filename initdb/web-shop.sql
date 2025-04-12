@@ -223,3 +223,66 @@ UNLOCK TABLES;
 --
 -- Table structure for table `products`
 --
+
+DROP TABLE IF EXISTS `products`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `products` (
+  `product_id` smallint NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `description` text,
+  `price` decimal(10,2) NOT NULL,
+  `category` varchar(255) DEFAULT NULL,
+  `manufacturer` varchar(255) DEFAULT NULL,
+  `imageUrl` varchar(255) DEFAULT NULL,
+  `freeShipping` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`product_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `products`
+--
+
+LOCK TABLES `products` WRITE;
+/*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` VALUES (1,'Huawei iPhone 19','Описание для Huawei iPhone 19',50.00,'Phones','Huawei','/images/phone.webp',1),(2,'Samsung Active 5','Описание для Samsung Active 5',518.00,'Watches','Samsung','/images/watches.webp',0),(3,'Samsung Air 12','Описание для Samsung Air 12',1289.00,'Laptops','Samsung','/images/laptop.webp',0),(4,'Apple Fit 20','Описание для Apple Fit 20',149.00,'Watches','Apple','/images/watches.webp',0),(5,'Samsung Book 2','Описание для Samsung Book 2',454.00,'Laptops','Samsung','/images/laptop.webp',1),(6,'Apple Gaming 10','Описание для Apple Gaming 10',1010.00,'Laptops','Apple','/images/laptop.webp',0),(7,'Samsung P30 19','Описание для Samsung P30 19',306.00,'Phones','Samsung','/images/phone.webp',0),(8,'Huawei Book 2','Описание для Huawei Book 2',659.00,'Laptops','Huawei','/images/laptop.webp',0),(9,'Xiaomi Watch 8','Описание для Xiaomi Watch 8',1080.00,'Watches','Xiaomi','/images/watches.webp',0),(10,'Huawei Note 10','Описание для Huawei Note 10',93.00,'Phones','Huawei','/images/phone.webp',0),(11,'Samsung Gear 18','Описание для Samsung Gear 18',920.00,'Watches','Samsung','/images/watches.webp',0),(12,'Samsung Band 5','Описание для Samsung Band 5',878.00,'Watches','Samsung','/images/watches.webp',0),(13,'Samsung Gear 3','Описание для Samsung Gear 3',869.00,'Watches','Samsung','/images/watches.webp',1),(14,'Samsung Band 18','Описание для Samsung Band 18',212.00,'Watches','Samsung','/images/watches.webp',0),(15,'Apple Ultra 20','Описание для Apple Ultra 20',689.00,'Laptops','Apple','/images/laptop.webp',0),(16,'Xiaomi Note 17','Описание для Xiaomi Note 17',451.00,'Phones','Xiaomi','/images/phone.webp',0),(17,'Xiaomi Band 10','Описание для Xiaomi Band 10',849.00,'Watches','Xiaomi','/images/watches.webp',1),(18,'Apple Gaming 15','Описание для Apple Gaming 15',150.00,'Laptops','Apple','/images/laptop.webp',0),(19,'Huawei Fit 3','Описание для Huawei Fit 3',780.00,'Watches','Huawei','/images/watches.webp',0),(20,'Huawei Active 10','Описание для Huawei Active 10',550.00,'Watches','Huawei','/images/watches.webp',1),(21,'Huawei iPhone 8','Описание для Huawei iPhone 8',631.00,'Phones','Huawei','/images/phone.webp',1),(22,'Apple Studio 6','Описание для Apple Studio 6',579.00,'Laptops','Apple','/images/laptop.webp',1),(23,'Huawei Note 12','Описание для Huawei Note 12',1038.00,'Phones','Huawei','/images/phone.webp',0),(24,'Samsung Mi 10','Описание для Samsung Mi 10',1014.00,'Phones','Samsung','/images/phone.webp',0),(25,'Xiaomi iPhone 7','Описание для Xiaomi iPhone 7',1167.00,'Phones','Xiaomi','/images/phone.webp',0),(26,'Samsung Ultra 3','Описание для Samsung Ultra 3',1116.00,'Laptops','Samsung','/images/laptop.webp',1),(27,'Apple Galaxy 12','Описание для Apple Galaxy 12',403.00,'Phones','Apple','/images/phone.webp',1),(28,'Xiaomi Galaxy 3','Описание для Xiaomi Galaxy 3',1452.00,'Phones','Xiaomi','/images/phone.webp',1),(29,'Xiaomi Note 19','Описание для Xiaomi Note 19',339.00,'Phones','Xiaomi','/images/phone.webp',0),(30,'Huawei Mi 3','Описание для Huawei Mi 3',849.00,'Phones','Huawei','/images/phone.webp',0),(31,'Apple Fit 12','Описание для Apple Fit 12',1127.00,'Watches','Apple','/images/watches.webp',1),(32,'Huawei Galaxy 5','Описание для Huawei Galaxy 5',1382.00,'Phones','Huawei','/images/phone.webp',0),(33,'Huawei Air 16','Описание для Huawei Air 16',1286.00,'Laptops','Huawei','/images/laptop.webp',0),(34,'Huawei P30 9','Описание для Huawei P30 9',1010.00,'Phones','Huawei','/images/phone.webp',1),(35,'Xiaomi iPhone 6','Описание для Xiaomi iPhone 6',902.00,'Phones','Xiaomi','/images/phone.webp',0),(36,'Samsung P30 2','Описание для Samsung P30 2',65.00,'Phones','Samsung','/images/phone.webp',0),(37,'Huawei Mi 5','Описание для Huawei Mi 5',1434.00,'Phones','Huawei','/images/phone.webp',1),(38,'Huawei Active 8','Описание для Huawei Active 8',90.00,'Watches','Huawei','/images/watches.webp',1),(39,'Apple Studio 20','Описание для Apple Studio 20',349.00,'Laptops','Apple','/images/laptop.webp',0),(40,'Apple iPhone 11','Описание для Apple iPhone 11',822.00,'Phones','Apple','/images/phone.webp',1),(41,'Samsung Air 19','Описание для Samsung Air 19',487.00,'Laptops','Samsung','/images/laptop.webp',0),(42,'Apple Ultra 4','Описание для Apple Ultra 4',675.00,'Laptops','Apple','/images/laptop.webp',1),(43,'Xiaomi Pro 9','Описание для Xiaomi Pro 9',977.00,'Laptops','Xiaomi','/images/laptop.webp',1),(44,'Xiaomi Pro 4','Описание для Xiaomi Pro 4',1284.00,'Laptops','Xiaomi','/images/laptop.webp',0),(45,'Huawei Mi 1','Описание для Huawei Mi 1',1313.00,'Phones','Huawei','/images/phone.webp',0),(46,'Apple iPhone 11','Описание для Apple iPhone 11',312.00,'Phones','Apple','/images/phone.webp',1),(47,'Huawei Book 3','Описание для Huawei Book 3',393.00,'Laptops','Huawei','/images/laptop.webp',0),(48,'Apple Watch 11','Описание для Apple Watch 11',1196.00,'Watches','Apple','/images/watches.webp',1),(49,'Apple Fit 10','Описание для Apple Fit 10',1477.00,'Watches','Apple','/images/watches.webp',1),(50,'Huawei Mi 3','Описание для Huawei Mi 3',293.00,'Phones','Huawei','/images/phone.webp',0);
+/*!40000 ALTER TABLE `products` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `users` (
+  `user_id` smallint NOT NULL AUTO_INCREMENT,
+  `login` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `token` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (4,'password2','password1',NULL),(5,'pass','password1',NULL),(6,'password1','password1','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzA5NTY0MDIzLCJleHAiOjE3MTgyMDQwMjN9.r996pvE80Zg_M2jdBW8uOMzLvttoQ6WD1t4hbhtQF28'),(7,'password4324','password4324',NULL),(8,'passwor11','password11',NULL),(9,'password555','password555',NULL),(10,'password222','password222',NULL),(11,'password333','password333','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDg5NTcwMjgsImV4cCI6MTcwOTA0MzQyOH0.Gzq_9Efnyf9i8CCuSgmREo_nu5R3J4MBtit3cd4OEHk'),(12,'password2222','password2222','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTcwODk1OTAyNCwiZXhwIjoxNzA5MDQ1NDI0fQ.bOz5KvwT98LeoLNTXWsndtjndW9bCj2CstxZZqUmshQ'),(13,'sdfsgfs','password2222',NULL),(14,'ewrtwrwerrwe','wrwererw3333',NULL),(15,'password600','password600',NULL),(16,'password6005','password600',NULL),(17,'passwo','password600',NULL),(18,'password11','password1',NULL),(19,'password55555','password55555',NULL),(20,'password12345','password12345','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjAsImlhdCI6MTcwOTA1OTU4NywiZXhwIjoxNzA5MTQ1OTg3fQ.wvmGn1JPDoxp5bkGa7Xo1aSZQ77fVFvLV8Zv_5Jc838');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2024-03-05  1:16:38
