@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <title>Корзина</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/">Каталог</a>
+        <a href="/about">О компании</a>
+        <a href="/contacts">Контакты</a>
+        <a href="/cart" class="auth-dependent">
+          <span class="cart-icon">🛒</span>
+          Корзина
+        </a>
+        <span id="cart-count" class="auth-dependent">(0)</span>
+        <a href="/payment" class="auth-dependent">Оплата</a>
+        <a href="/history" class="auth-dependent">История заказов</a>
+        <button id="login-button" onclick="window.location.href='/login'">
+          Регистрация / Войти
+        </button>
+        <button id="logout-button" style="display: none">Выйти</button>
+      </nav>
+    </header>
+
+    <h1>Корзина</h1>
+    <div id="cart"></div>
+    <div id="cart-total"></div>
+    <div class="return-button-container">
+      <button id="checkout-button" class="checkout-btn">Оформить заказ</button>
+    </div>
+
+    <footer>
+      <a href="/policy">Политика использования</a>
+      <p>&copy; 2024 Интернет-магазин. Все права защищены.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      window.baseUrl = "";
+    </script>
+    <script src="../js/general.js"></script>
+    <script src="../js/authCheck.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/login.js"></script>
+  </body>
+</html>
