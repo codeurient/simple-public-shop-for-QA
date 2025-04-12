@@ -1,0 +1,506 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f4f4f4; /* Светлый фон для всей страницы */
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center; /* Центрирование всего содержимого header */
+  align-items: center;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Центрирование элементов навигации */
+  gap: 10px; /* Устанавливаем интервал между элементами */
+  flex-wrap: wrap; /* Перенос элементов на новую строку при нехватке места */
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  transition: background-color 0.3s;
+}
+
+header nav a:hover {
+  background-color: #555;
+  border-radius: 5px;
+}
+
+#login-button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  margin-left: auto; /* Помещаем кнопку в конец навигационной панели */
+}
+
+#login-button:hover {
+  background-color: #45a049;
+}
+
+footer a {
+  color: white; /* Цвет текста */
+  text-decoration: none; /* Убрать подчеркивание */
+  padding: 10px 15px; /* Добавить отступ для ссылки */
+}
+
+footer a:hover {
+  text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+
+#pagination-container {
+  display: flex;
+  justify-content: center; /* Центрирование контейнера */
+  margin-top: 20px;
+  margin-bottom: 20px; /* Добавляем отступ снизу */
+}
+
+#pagination {
+  display: inline-flex; /* Сделать контейнер кнопок inline-flex для предотвращения растягивания */
+  gap: 10px; /* Добавление пространства между кнопками */
+}
+
+#pagination button {
+  padding: 5px 10px; /* Паддинг для кнопок */
+  min-width: 30px; /* Минимальная ширина для каждой кнопки */
+  text-align: center; /* Центрирование текста внутри кнопок */
+  background-color: #4CAF50; /* Цвет фона */
+  color: white; /* Цвет текста */
+  border: none; /* Удаление рамки */
+  border-radius: 5px; /* Скругление углов */
+  cursor: pointer; /* Стиль курсора */
+  transition: background-color 0.3s; /* Плавное изменение фона при наведении */
+}
+
+#pagination button:hover {
+  background-color: #45a049; /* Цвет фона при наведении */
+}
+
+.container {
+  display: flex;
+  flex: 1;
+  padding: 20px;
+}
+
+#filters {
+  flex-basis: 25%; /* Занимает одну четвертую страницы */
+  padding-right: 20px;
+  border-right: 1px solid #ddd;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+#filters button {
+  padding: 10px 15px; /* Увеличение паддинга для кнопок */
+  margin: 5px 10px 5px 0; /* Добавление отступа справа и сверху */
+  background-color: #4CAF50; /* Цвет фона */
+  color: white; /* Цвет текста */
+  border: none; /* Удаление рамки */
+  border-radius: 5px; /* Скругление углов */
+  cursor: pointer; /* Стиль курсора */
+  transition: background-color 0.3s; /* Плавное изменение фона при наведении */
+}
+
+#filters button:hover {
+  background-color: #45a049; /* Цвет фона при наведении */
+}
+
+#product-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* По умолчанию две колонки */
+  gap: 20px;
+  justify-items: center;
+  align-content: start;
+  padding-bottom: 20px;
+}
+
+@media (max-width: 600px) { /* Например, для экранов меньше 600px */
+  #product-list {
+    grid-template-columns: 1fr; /* На маленьких экранах переходим на одну колонку */
+  }
+}
+
+input[type=number], select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
+  margin-top: auto;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* Позволяет элементам переноситься на следующую строку */
+}
+
+.sorting-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 200px; /* Фиксированная ширина для контейнера сортировки */
+  margin-left: auto; /* Выравнивание контейнера сортировки по правому краю */
+  margin-right: 20px; /* Отступ справа для выравнивания с другими элементами */
+}
+
+/* Стили для контейнера аутентификации */
+.auth-container {
+  display: flex;
+  flex-direction: column; /* Выравниваем формы в столбец */
+  align-items: center; /* Центрируем формы по горизонтали */
+  padding: 20px;
+  gap: 20px; /* Добавляем пространство между формами */
+}
+
+/* Стили для форм логина и регистрации */
+#login-form, #register-form {
+  width: 100%; /* Формы теперь занимают всю доступную ширину контейнера */
+  max-width: 400px; /* Ограничиваем максимальную ширину форм */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для полей ввода в формах */
+#login-form input, #register-form input {
+  width: calc(100% - 40px); /* Учитываем padding формы */
+  margin: 10px 0; /* Отступы между полями */
+}
+
+/* Стили для кнопок в формах */
+#login-form button, #register-form button {
+  width: 80%; /* Увеличиваем ширину кнопок */
+  margin-top: 20px; /* Отступ сверху */
+}
+
+
+/* Новые стили для кнопок и форм */
+input[type="text"], input[type="password"], input[type="number"] {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+button, input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover, input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.orders-history {
+margin-top: 20px;
+}
+
+.orders-history h1 {
+margin-bottom: 20px;
+}
+
+#orders-table {
+width: 100%;
+border-collapse: collapse;
+}
+
+#orders-table th,
+#orders-table td {
+border: 1px solid #ddd;
+padding: 8px;
+text-align: left;
+}
+
+#orders-table th {
+background-color: #f2f2f2;
+}
+
+#orders-table img {
+width: 50px;
+height: auto;
+}
+
+h1 {
+  margin: 20px 0; /* Добавляем верхний и нижний отступы к заголовку */
+  text-align: center; /* Центрируем заголовок, если нужно */
+}
+
+#cart-total {
+  padding: 10px; /* Добавляем паддинг для внутреннего пространства */
+  margin: 20px 0; /* Добавляем верхний и нижний отступы */
+  background-color: #f5f5f5; /* Легкий фон, если необходим */
+  border-radius: 4px; /* Скругляем углы для эстетики */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Небольшая тень для визуального выделения */
+  text-align: center; /* Центрируем текст общей суммы */
+}
+
+
+/* Стили для элементов корзины */
+#cart div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 15px; /* Увеличиваем отступы для большего пространства */
+  margin-bottom: 15px; /* Увеличиваем отступ между элементами корзины */
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+#cart div > * {
+  margin-right: 15px; /* Увеличиваем отступ справа для всех элементов */
+}
+
+#cart div > *:last-child {
+  margin-right: 0; /* Убираем отступ у последнего элемента */
+}
+
+#cart div > input[type='number'] {
+  width: 60px; /* Устанавливаем фиксированную ширину для поля ввода */
+}
+
+/* Стиль для кнопки "Удалить" */
+#cart div button {
+  padding: 5px; /* Уменьшаем паддинг */
+  margin: 0 5px; /* Уменьшаем отступ вокруг кнопки */
+  font-size: 14px; /* Меньший размер шрифта */
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#cart div button:hover {
+  background-color: #d32f2f;
+}
+
+/* Стиль для кнопки "Оформить заказ" */
+.checkout-btn {
+  padding: 10px 15px; /* Уменьшаем паддинг */
+  margin: 10px auto; /* Уменьшаем отступ сверху и снизу, автоматически выравниваем по центру */
+  display: block; /* Блочный тип позволит использовать margin auto для центрирования */
+  width: fit-content; /* Автоматическая ширина содержимого */
+  font-size: 16px; /* Адекватный размер шрифта */
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.checkout-btn:hover {
+  background-color: #45a049;
+}
+
+/* Дополнительно, можно добавить небольшой внешний отступ для всего блока корзины,
+чтобы элементы внутри не казались слишком прижатыми к краям */
+#cart {
+  margin: 20px; /* Добавляем немного внешнего пространства */
+}
+
+/* Стиль для поля изменения количества товаров */
+.quantity-input {
+  width: 60px; /* Достаточно для 3 символов */
+  text-align: center;
+}
+
+.payment-form {
+  margin: 20px; /* Добавляем отступы со всех сторон для формы оплаты */
+  background-color: #fff; /* Устанавливаем белый фон для формы */
+  padding: 20px; /* Добавляем внутренние отступы для формы */
+  border-radius: 5px; /* Скругляем углы формы */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Добавляем тень для формы */
+}
+
+.payment-form input[type="text"],
+.payment-form input[type="number"],
+.payment-form select,
+.payment-form input[type="email"] {
+  width: 100%; /* Устанавливаем ширину полей на 100% */
+  padding: 10px; /* Добавляем паддинг для полей */
+  margin: 5px 0; /* Добавляем верхний и нижний отступы между полями */
+  border: 1px solid #ccc; /* Устанавливаем границу для полей */
+  border-radius: 4px; /* Скругляем углы полей */
+}
+
+.payment-form .error-message {
+  width: 100%; /* Устанавливаем ширину сообщения об ошибке равной ширине инпутов */
+  margin-top: 5px; /* Добавляем отступ сверху для сообщения об ошибке */
+  font-size: 0.9em; /* Уменьшаем размер шрифта для сообщения об ошибке */
+  color: #f44336; /* Устанавливаем красный цвет текста для сообщения об ошибке */
+  text-align: left; /* Выравниваем текст сообщения об ошибке по левому краю */
+}
+
+.payment-form button[type="submit"] {
+  margin-top: 20px; /* Добавляем отступ сверху для кнопки */
+  width: auto; /* Возвращаем ширину кнопки к автоматической */
+  padding: 10px 20px; /* Устанавливаем паддинг для кнопки */
+}
+
+/* Дополнительные стили для выравнивания элементов внутри .payment-form */
+.payment-form > div, .payment-method {
+  margin-bottom: 10px; /* Добавляем отступ снизу между блоками в форме */
+}
+
+.payment-methods input[type="radio"] {
+  transform: scale(0.8); /* Уменьшаем радиокнопки */
+  margin-right: 5px; /* Добавляем отступ справа от радиокнопки */
+}
+
+.payment-methods label {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 15px; /* Добавляем отступ справа между методами оплаты */
+  cursor: pointer;
+}
+
+.payment-logo {
+  width: 80px; /* Уменьшаем размер логотипов методов оплаты */
+  height: auto; /* Автоматический подбор высоты для сохранения пропорций */
+  margin-left: 5px; /* Добавляем отступ слева от логотипа */
+}
+
+#order-items-list .order-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+#order-items-list .order-item p {
+  margin: 0 15px 0 0; /* Добавляем отступ справа для текста */
+  flex-grow: 1;
+}
+
+#order-items-list .order-item img {
+  width: 50px; /* Уточняем или корректируем размеры изображений, если необходимо */
+  height: auto;
+  margin-right: 15px; /* Отступ справа от изображения */
+}
+
+/* Стиль для кнопки "Удалить" в заказах */
+.order-item button {
+  padding: 5px 10px; /* Паддинг для кнопки, аналогично кнопке в корзине */
+  background-color: #f44336; /* Цвет фона кнопки "Удалить", такой же как в корзине */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.order-item button:hover {
+  background-color: #d32f2f; /* Цвет при наведении, такой же как в корзине */
+}
+
+/* Стиль для элемента изменения количества товаров в заказах */
+.order-item input[type='number'] {
+  width: 60px; /* Ширина поля ввода, аналогично корзине */
+  padding: 5px; /* Паддинг для поля ввода */
+  text-align: center; /* Выравнивание текста по центру */
+  margin-right: 10px; /* Отступ справа, для отделения от других элементов */
+  border: 1px solid #ccc; /* Граница поля ввода */
+  border-radius: 4px; /* Скругление углов поля ввода */
+}
+/* Стили для блока суммы заказа */
+#order-summary {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#order-summary h2 {
+  margin-bottom: 10px;
+}
+
+#order-summary p {
+  font-size: 1.2em;
+}
+
+.orders-history {
+  margin: 20px; /* Добавляем отступы со всех сторон для раздела истории заказов */
+  background-color: #fff; /* Фоновый цвет, если нужно */
+  padding: 20px; /* Внутренние отступы для раздела */
+  border-radius: 5px; /* Скругляем углы */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Добавляем тень для лучшего визуального выделения */
+}
+
+#orders-table {
+  width: 100%; /* Подтверждаем, что таблица занимает всю доступную ширину */
+  margin: 20px 0; /* Добавляем верхний и нижний отступы для таблицы */
+}
+
+#orders-table th, #orders-table td {
+  padding: 10px; /* Увеличиваем внутренние отступы для ячеек таблицы */
+  text-align: left; /* Выравниваем текст внутри ячеек по левому краю */
+}
+
+#total-price {
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+from { opacity: 0; }
+to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+from { opacity: 1; }
+to { opacity: 0; }
+}
