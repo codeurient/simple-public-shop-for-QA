@@ -21,3 +21,22 @@ USE `web_shop`;
 -- Table structure for table `card_info`
 --
 
+DROP TABLE IF EXISTS `card_info`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `card_info` (
+  `card_id` smallint NOT NULL AUTO_INCREMENT,
+  `card_type` varchar(50) DEFAULT NULL,
+  `expiry_month` int DEFAULT NULL,
+  `expiry_year` int DEFAULT NULL,
+  `cvv` int DEFAULT NULL,
+  `balance` decimal(10,2) DEFAULT NULL,
+  `status` varchar(50) DEFAULT NULL,
+  `card_code` char(16) DEFAULT NULL,
+  PRIMARY KEY (`card_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `card_info`
+--
