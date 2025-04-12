@@ -109,3 +109,66 @@ UNLOCK TABLES;
 --
 -- Table structure for table `order_items_paid`
 --
+
+DROP TABLE IF EXISTS `order_items_paid`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `order_items_paid` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` smallint NOT NULL,
+  `order_id` smallint NOT NULL,
+  `product_id` smallint NOT NULL,
+  `quantity` smallint NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  KEY `order_id` (`order_id`),
+  KEY `product_id` (`product_id`),
+  CONSTRAINT `order_items_paid_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
+  CONSTRAINT `order_items_paid_ibfk_2` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`),
+  CONSTRAINT `order_items_paid_ibfk_3` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `order_items_paid`
+--
+
+LOCK TABLES `order_items_paid` WRITE;
+/*!40000 ALTER TABLE `order_items_paid` DISABLE KEYS */;
+INSERT INTO `order_items_paid` VALUES (1,6,209,4,1),(2,6,211,4,1),(3,6,222,27,1),(4,6,223,4,1),(5,6,224,4,1),(6,6,224,27,1),(7,6,224,18,1),(8,6,225,4,1),(9,6,226,4,1),(10,6,227,4,1),(11,6,228,4,1),(12,6,229,4,1),(13,6,230,4,1),(14,6,231,4,1),(15,6,236,4,1),(16,6,253,4,2),(17,6,256,4,1),(18,6,257,27,1),(19,6,264,31,3),(20,6,265,31,1),(21,6,266,4,1),(22,6,274,49,3),(23,6,275,31,1),(24,6,285,27,1);
+/*!40000 ALTER TABLE `order_items_paid` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `orders`
+--
+
+DROP TABLE IF EXISTS `orders`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `orders` (
+  `order_id` smallint NOT NULL AUTO_INCREMENT,
+  `user_id` smallint DEFAULT NULL,
+  `status` varchar(100) DEFAULT NULL,
+  `payment_date` datetime DEFAULT NULL,
+  `delivery_date` datetime DEFAULT NULL,
+  `total` decimal(10,2) NOT NULL,
+  PRIMARY KEY (`order_id`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=286 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `orders`
+--
+
+LOCK TABLES `orders` WRITE;
+/*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+INSERT INTO `orders` VALUES (204,6,'paid','2024-02-29 23:18:52','2024-03-05 23:18:52',1127.00),(205,6,'paid','2024-02-29 23:19:56','2024-03-05 23:19:56',1477.00),(207,6,'paid','2024-02-29 23:28:23','2024-03-05 23:28:23',149.00),(209,6,'paid','2024-03-01 11:28:41','2024-03-06 11:28:41',149.00),(211,6,'paid','2024-03-01 11:34:20','2024-03-06 11:34:20',149.00),(222,6,'paid','2024-03-01 13:36:17','2024-03-06 13:36:17',403.00),(223,6,'paid','2024-03-01 13:36:17','2024-03-06 13:36:17',149.00),(224,6,'paid','2024-03-01 14:38:19','2024-03-06 14:38:19',702.00),(225,6,'paid','2024-03-01 15:53:58','2024-03-06 15:53:58',149.00),(226,6,'paid','2024-03-01 15:54:11','2024-03-06 15:54:11',149.00),(227,6,'paid','2024-03-01 15:54:21','2024-03-06 15:54:21',149.00),(228,6,'paid','2024-03-01 15:55:08','2024-03-06 15:55:08',149.00),(229,6,'paid','2024-03-01 15:55:08','2024-03-06 15:55:08',149.00),(230,6,'paid','2024-03-01 15:55:32','2024-03-06 15:55:32',149.00),(231,6,'paid','2024-03-01 15:55:42','2024-03-06 15:55:42',149.00),(236,6,'paid','2024-03-01 18:43:43','2024-03-06 18:43:43',149.00),(253,6,'paid','2024-03-01 21:04:04','2024-03-06 21:04:04',298.00),(256,6,'paid','2024-03-01 21:18:56','2024-03-06 21:18:56',149.00),(257,6,'paid','2024-03-01 21:20:08','2024-03-06 21:20:08',403.00),(264,6,'paid','2024-03-02 10:01:21','2024-03-07 10:01:21',3381.00),(265,6,'paid','2024-03-02 10:02:10','2024-03-07 10:02:10',1127.00),(266,6,'paid','2024-03-02 10:18:37','2024-03-07 10:18:37',149.00),(274,6,'paid','2024-03-02 14:54:43','2024-03-07 14:54:43',4431.00),(275,6,'paid','2024-03-02 15:38:33','2024-03-07 15:38:33',1127.00),(285,6,'paid','2024-03-02 23:30:47','2024-03-07 23:30:47',403.00);
+/*!40000 ALTER TABLE `orders` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `orders_total`
+--
