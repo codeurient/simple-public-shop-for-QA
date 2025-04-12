@@ -172,3 +172,54 @@ UNLOCK TABLES;
 --
 -- Table structure for table `orders_total`
 --
+
+DROP TABLE IF EXISTS `orders_total`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `orders_total` (
+  `user_id` smallint NOT NULL,
+  `total` decimal(10,2) NOT NULL,
+  PRIMARY KEY (`user_id`),
+  CONSTRAINT `orders_total_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `orders_total`
+--
+
+LOCK TABLES `orders_total` WRITE;
+/*!40000 ALTER TABLE `orders_total` DISABLE KEYS */;
+INSERT INTO `orders_total` VALUES (6,0.00);
+/*!40000 ALTER TABLE `orders_total` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `paypal_info`
+--
+
+DROP TABLE IF EXISTS `paypal_info`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `paypal_info` (
+  `paypal_id` int NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) NOT NULL,
+  `balance` decimal(10,2) NOT NULL,
+  `status` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`paypal_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `paypal_info`
+--
+
+LOCK TABLES `paypal_info` WRITE;
+/*!40000 ALTER TABLE `paypal_info` DISABLE KEYS */;
+INSERT INTO `paypal_info` VALUES (1,'valid@email.com',8309.00,'valid'),(2,'invalid@@email.com',0.00,'invalid'),(3,'blocked@email.com',523.00,'blocked');
+/*!40000 ALTER TABLE `paypal_info` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `products`
+--
